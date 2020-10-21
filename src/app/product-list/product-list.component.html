@@ -1,9 +1,20 @@
-<button (click)="share()">
+<!-- <button (click)="share()">
   Share
 </button>
 
-<app-product-alerts [products]="products" (notify)="onNotify()">
+<app-product-alerts [product]="products" (notify)="onNotify()">
 </app-product-alerts>
+-->
+
+<div *ngFor="let product of products; index as productId">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3>
+<!-- . . . -->
+</div>
 
 
 <!-- 
